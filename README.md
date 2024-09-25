@@ -177,7 +177,7 @@ Todos los mensajes deben seguir el formato:
 
 #### 3 Diagrama de Arquitectura de API	
 
-	![Diagrama Arquitectura API](https://github.com/klintfox/api-user-managemenet/tree/main/src/main/resources/diagrama/DiagramaApi.PNG?raw=true)
+	![Diagrama Arquitectura API](https://raw.githubusercontent.com/klintfox/api-user-managemenet/main/src/main/resources/diagrama/DiagramaApi.PNG)
 
 
 	- El archivo "Diagrama API.PNG" está ubicado en "api-user-management\src\main\resources\diagrama"
