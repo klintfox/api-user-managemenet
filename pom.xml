@@ -124,15 +124,12 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- JUnit para pruebas -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
 			<version>5.8.2</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- JaCoCo para la cobertura de pruebas -->
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>org.jacoco.agent</artifactId>
