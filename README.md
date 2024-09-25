@@ -175,11 +175,12 @@ Todos los mensajes deben seguir el formato:
 		foreign key (fk_user ) references user(id)
 	);
 
-#### 3 Diagrama de Arquitectura de API
+#### 3 Diagrama de Arquitectura de API	
+
+	![Diagrama Arquitectura API](https://github.com/klintfox/api-user-managemenet/tree/main/src/main/resources/diagrama/DiagramaApi.PNG)
 
 	- En la carpeta del proyecto "api-user-management\src\main\resources\diagrama" se encuentra el archivo "Diagrama API.PNG"
-	![Texto alternativo](https://github.com/klintfox/api-user-managemenet/tree/main/src/main/resources/diagrama/DiagramaApi.PNG)
-	
+
 #### 4 Coverage de código con Jacoco
 	- Abrir el prompt de comandos (consola) y nos en la raiz del proyecto clonado "\api-user-managemenet"
 	- Ejecutar la siguiente instrucción:
