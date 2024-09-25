@@ -56,39 +56,52 @@ Todos los mensajes deben seguir el formato:
 #### 1 Ejecución del Proyecto
 
 * Requisitos Previos
+
     - Java Development Kit 17
     - Apache Maven 3.8.8
     - Configuración de Variables de Entorno (JAVA_HOME , MAVEN_HOME)
 	- Verificar en consola la version de java con la instrucción java -version y la versión de maven mvn -v
+	
 * Paso 1
     - Clonar el proyecto con git o descargarlo de repositorio: https://github.com/klintfox/api-user-managemenet.git
     - Utilizando Git
+	
     ```sh
         git clone https://github.com/klintfox/api-user-managemenet.git
-    ```      
+    ```
+	
 * Pasos 2 Ejecución del proyecto con Maven por consola (windows)
     - Abrir el prompt de comandos (consola) y ubicarse en la raiz del proyecto clonado "..\api-user-managemenet"
 	- Ejecutar la siguiente instrucción:
+	
     ```sh
         mvn clean install -DskipTests -DskipSpringDoc
      ```
+	 
 	- clean: Este comando elimina todos los archivos generados por las construcciones anteriores
 	- install: Este comando compila el proyecto, ejecuta las pruebas y, si todo es exitoso, empaqueta el código y lo instala en el repositorio local de Maven.
 	- Si queremos ejecutar las pruebas unitarias desde consola ejecutamos el siguiente comando
+	
 	```sh
         mvn test
     ```	 
+	
     - Sí el build es exitoso ejecutamos el siguiente comando para correr el proyecto
+	
 	```sh
         mvn spring-boot:run
     ```
+	
 * Pruebas con Swagger - OpenAPI
+
 	- Abrimos el navegador y escribimos http://localhost:8090/swagger-ui/index.html
 	- En el navegador aparecera una ventana solicitanos escribir el usuario y la contraseña:
+	
 	```sh
 		usuario : admin
 		contraseña: admin
 	```
+	
 	- Hacemos click en aceptar para entrar a la página de Swagger - OpenApi localmente
 	- Hacemos click en el método Post de user-controller y se desplegará la ventana con el botón "Try it out"
 	- Al hacer click en el botón "try it our" se habilita el BodyRequest para poder editar el cuerpo de la petición el cual es pre cargado con un ejemplo
@@ -101,11 +114,14 @@ Todos los mensajes deben seguir el formato:
 	- Una vez importado desplegamos en postman la coleccion "SmartJob" y encontraremos el request "UserRegister"
 	- Para probarlo primero iremos a la pestaña "Authorization" y seleccionamos en la sección "Auth Type" la opción "Basic Auth"
 	- Al seleccionar esta opción en la parte derecha nos pedira ingresa el usuario y contraseña para realizar la petición
+	
 	```sh
 		usuario : admin
 		contraseña: admin
 	```
+	
 	- Una vez ingresado el usuario y la contraseña hacemos click en la pestaña "Body" seleccionamos "raw" e ingresamos en formato json la petición
+	
     ```sh
     { 
         "name": "Carlos Rodriguez", 
@@ -125,41 +141,47 @@ Todos los mensajes deben seguir el formato:
         ] 
     }	
      ```
+	
 	- Para enviar la petición al API presionamos el botón azul "Send"
 	- Para ver el paso a paso en imágenes abrir los archivos ubicados en la carpeta "api-user-management\src\main\resources\postman"
 
-#### 2 Esquema BD - H2    
-	- En la carpeta del proyecto "api-user-management\src\main\resources\db" se deja el archivo "script.sql" con el esquema de las tablas
-        create table app_user ( 
-            id  varchar(255)  primary key not null,
-            name varchar(50) not null, 
-            email varchar(255) not null, 
-            password varchar(20)  not null, 
-            created timestamp null, 
-            modified timestamp null,
-            last_login timestamp null,
-            is_active null,
-            token varchar(300) not null
-        );
-    
-        create table user_phones ( 
-            id INT primary key not null,
-            number  int null, 
-            city_code int null, 
-            country_code int null, 
-            fk_user varchar(300),
-            foreign key (fk_user ) references user(id)
-        );
+#### 2 Esquema BD - H2 
+   
+	- En la carpeta del proyecto "api-user-management\src\main\resources\db" se deja el archivo "script.sql" con el esquema de las tablas.
+	
+	create table app_user ( 
+		id  varchar(255)  primary key not null,
+		name varchar(50) not null, 
+		email varchar(255) not null, 
+		password varchar(20)  not null, 
+		created timestamp null, 
+		modified timestamp null,
+		last_login timestamp null,
+		is_active null,
+		token varchar(300) not null
+	);
+
+	create table user_phones ( 
+		id INT primary key not null,
+		number  int null, 
+		city_code int null, 
+		country_code int null, 
+		fk_user varchar(300),
+		foreign key (fk_user ) references user(id)
+	);
+	
 #### 3 Coverage de código con Jacoco
 	- Abrir el prompt de comandos (consola) y nos en la raiz del proyecto clonado "\api-user-managemenet"
 	- Ejecutar la siguiente instrucción:
-	-
+	
 	```sh
 		mvn jacoco:report
 	```	
+	
 	- Si el build es exitoso ubicarse en la siguiente ubicación en el proyecto "\api-user-management\target\site\jacoco"
 	- Abrir con el navegador el archivo index.html para ver el coverage del código
 	- En la carpeta del proyecto "api-user-management\src\main\resources\coverage" se deja una captura del coverage
+	
 #### 4 Dependencias utilizadas (pom.xml)
 	1. spring-boot-starter-data-jpa
 	Proporciona soporte para acceder a bases de datos utilizando Spring Data JPA. Incluye todas las configuraciones necesarias para trabajar con JPA (Java Persistence API) y Hibernate.
@@ -214,7 +236,9 @@ Todos los mensajes deben seguir el formato:
 	
 	18. org.jacoco.agent
 	Una biblioteca para medir la cobertura de código durante las pruebas. Permite analizar qué partes del código fueron ejecutadas durante las pruebas.
+	
 #### 5 Versiones utilizadas
+
 	- <java.version> 17 </java.version>
 	- <spring.boot.version> 3.3.4 </spring.boot.version>
 	- <spring-cloud.version> 2023.0.2 </spring-cloud.version>
