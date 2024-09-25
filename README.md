@@ -177,9 +177,10 @@ Todos los mensajes deben seguir el formato:
 
 #### 3 Diagrama de Arquitectura de API	
 
-	![Diagrama Arquitectura API](https://github.com/klintfox/api-user-managemenet/tree/main/src/main/resources/diagrama/DiagramaApi.PNG)
+	![Diagrama Arquitectura API](https://github.com/klintfox/api-user-managemenet/tree/main/src/main/resources/diagrama/DiagramaApi.PNG?raw=true)
 
-	- En la carpeta del proyecto "api-user-management\src\main\resources\diagrama" se encuentra el archivo "Diagrama API.PNG"
+
+	- El archivo "Diagrama API.PNG" está ubicado en "api-user-management\src\main\resources\diagrama"
 
 #### 4 Coverage de código con Jacoco
 	- Abrir el prompt de comandos (consola) y nos en la raiz del proyecto clonado "\api-user-managemenet"
