@@ -1,5 +1,3 @@
-# api-user-managemenet
-
 # API RESTFUL USER MANAGEMENET 
 
 Desarrolle una aplicación que exponga una API RESTful de creación de usuarios. 
@@ -63,6 +61,7 @@ Todos los mensajes deben seguir el formato:
 	- Verificar en consola la version de java con la instrucción java -version y la versión de maven mvn -v
 	
 * Paso 1
+
     - Clonar el proyecto con git o descargarlo de repositorio: https://github.com/klintfox/api-user-managemenet.git
     - Utilizando Git
 	
@@ -70,7 +69,8 @@ Todos los mensajes deben seguir el formato:
         git clone https://github.com/klintfox/api-user-managemenet.git
     ```
 	
-* Pasos 2 Ejecución del proyecto con Maven por consola (windows)
+* Pasos 2 : Ejecución del proyecto con Maven por consola (windows)
+
     - Abrir el prompt de comandos (consola) y ubicarse en la raiz del proyecto clonado "..\api-user-managemenet"
 	- Ejecutar la siguiente instrucción:
 	
@@ -91,7 +91,12 @@ Todos los mensajes deben seguir el formato:
 	```sh
         mvn spring-boot:run
     ```
-	
+* Pasos 2.1 : Ejecución del proyecto con Spring Tool Suite - STS
+
+	- Importamos el proyecto clonado en STS
+	- Hacemos click derecho al proyecto opción "Run" y luego seleccionamos "maven install"
+	- Si el Build es exitoso del paso previo, hacemos click derecho en el proyecto opción "Run" y luego selecciomos "Spring boot app"
+
 * Pruebas con Swagger - OpenAPI
 
 	- Abrimos el navegador y escribimos http://localhost:8090/swagger-ui/index.html
