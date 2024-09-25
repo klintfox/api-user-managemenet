@@ -1,6 +1,10 @@
 package com.bci.dto;
 
-public class ErrorResponseDto {
+import java.io.Serializable;
+
+public class ErrorResponseDto implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 
 	private String mensaje;
 

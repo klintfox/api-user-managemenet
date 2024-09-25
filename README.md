@@ -174,8 +174,13 @@ Todos los mensajes deben seguir el formato:
 		fk_user varchar(300),
 		foreign key (fk_user ) references user(id)
 	);
+
+#### 3 Diagrama de Arquitectura de API
+
+	- En la carpeta del proyecto "api-user-management\src\main\resources\diagrama" se encuentra el archivo "Diagrama API.PNG"
+	![Texto alternativo](https://github.com/klintfox/api-user-managemenet/tree/main/src/main/resources/diagrama/DiagramaApi.PNG)
 	
-#### 3 Coverage de código con Jacoco
+#### 4 Coverage de código con Jacoco
 	- Abrir el prompt de comandos (consola) y nos en la raiz del proyecto clonado "\api-user-managemenet"
 	- Ejecutar la siguiente instrucción:
 	
@@ -187,7 +192,7 @@ Todos los mensajes deben seguir el formato:
 	- Abrir con el navegador el archivo index.html para ver el coverage del código
 	- En la carpeta del proyecto "api-user-management\src\main\resources\coverage" se deja una captura del coverage
 	
-#### 4 Dependencias utilizadas (pom.xml)
+#### 5 Dependencias utilizadas (pom.xml)
 	1. spring-boot-starter-data-jpa
 	Proporciona soporte para acceder a bases de datos utilizando Spring Data JPA. Incluye todas las configuraciones necesarias para trabajar con JPA (Java Persistence API) y Hibernate.
 	
@@ -242,7 +247,7 @@ Todos los mensajes deben seguir el formato:
 	18. org.jacoco.agent
 	Una biblioteca para medir la cobertura de código durante las pruebas. Permite analizar qué partes del código fueron ejecutadas durante las pruebas.
 	
-#### 5 Versiones utilizadas
+#### 6 Versiones utilizadas
 
 	- <java.version> 17 </java.version>
 	- <spring.boot.version> 3.3.4 </spring.boot.version>
