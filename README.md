@@ -1,4 +1,4 @@
-# API RESTFUL USER MANAGEMENET 
+# API RESTFUL USER MANAGEMENT
 
 Desarrolle una aplicación que exponga una API RESTful de creación de usuarios. 
 Todos los endpoints deben aceptar y retornar solamente JSON, inclusive al para los mensajes de error. 
