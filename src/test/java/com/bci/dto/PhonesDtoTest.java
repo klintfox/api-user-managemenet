@@ -11,8 +11,8 @@ public class PhonesDtoTest {
     public void testDefaultConstructor() {
         PhonesDto phonesDto = new PhonesDto();
         assertNull(phonesDto.getNumber());
-        assertEquals(0, phonesDto.getCitycode());
-        assertEquals(0, phonesDto.getCountrycode());
+        assertNull(phonesDto.getCitycode());
+        assertNull(phonesDto.getContrycode());
     }
 
     @Test
@@ -21,7 +21,7 @@ public class PhonesDtoTest {
         
         assertEquals("987654321", phonesDto.getNumber());
         assertEquals(2, phonesDto.getCitycode());
-        assertEquals(56, phonesDto.getCountrycode());
+        assertEquals(56, phonesDto.getContrycode());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class PhonesDtoTest {
         phonesDto.setCitycode(10);
         assertEquals(10, phonesDto.getCitycode());
 
-        phonesDto.setCountrycode(99);
-        assertEquals(99, phonesDto.getCountrycode());
+        phonesDto.setContrycode(99);
+        assertEquals(99, phonesDto.getContrycode());
     }
 }

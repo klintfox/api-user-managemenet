@@ -1,22 +1,31 @@
 package com.bci.dto;
 
-import java.io.Serializable;
+import com.bci.deserializer.PhonesDtoDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
-
-public class PhonesDto implements Serializable {
-
-	private static final long serialVersionUID = 4093730209867093750L;
+@JsonDeserialize(using = PhonesDtoDeserializer.class)
+public class PhonesDto  {
 
 	@Schema(description = "Phone numbe: ", example = "987654321")
+	@NotBlank(message = "{number.not.null}")
+	@Size(min = 5, message = "{number.invalid}")
 	private String number;
 
 	@Schema(description = "City code: ", example = "2", type = "integer")
-	private int citycode;
+	@NotBlank(message = "{citycode.not.null}")
+	@Min(value = 0, message = "{citycode.invalid}")
+	private Integer citycode;
 
 	@Schema(description = "Country code: ", example = "56", type = "integer")
-	private int countrycode;
+	@Min(value = 1, message = "{countrycode.invalid}")
+	@NotBlank(message = "{countrycode.not.null}")
+	private Integer contrycode;
 
 	public PhonesDto() {
 	}
@@ -29,26 +38,31 @@ public class PhonesDto implements Serializable {
 		this.number = number;
 	}
 
-	public int getCitycode() {
+	public Integer getCitycode() {
 		return citycode;
 	}
 
-	public void setCitycode(int citycode) {
+	public void setCitycode(Integer citycode) {
 		this.citycode = citycode;
 	}
 
-	public int getCountrycode() {
-		return countrycode;
+	public Integer getContrycode() {
+		return contrycode;
 	}
 
-	public void setCountrycode(int countrycode) {
-		this.countrycode = countrycode;
+	public void setContrycode(Integer contrycode) {
+		this.contrycode = contrycode;
 	}
 
-	public PhonesDto(String number, int citycode, int countrycode) {
+	public PhonesDto(
+			@NotBlank(message = "{number.not.null}") @Pattern(regexp = "^\\d{7,15}$", message = "{number.invalid}") String number,
+			@NotBlank(message = "{citycode.not.null}") @Min(value = 0, message = "{citycode.invalid}") Integer citycode,
+			@Min(value = 1, message = "{countrycode.invalid}") @NotBlank(message = "{countrycode.not.null}") Integer contrycode) {
 		super();
 		this.number = number;
 		this.citycode = citycode;
-		this.countrycode = countrycode;
+		this.contrycode = contrycode;
 	}
+
+	
 }
